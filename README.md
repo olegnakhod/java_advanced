@@ -4,6 +4,7 @@
           <li><a href=https://github.com/olegnakhod/java_advanced/tree/lesson-01>Lesson 01</a> [Unit testing]</li>
           <li><a href=https://github.com/olegnakhod/java_advanced/tree/lesson-02>Lesson 02</a> [JDBC]</li>
           <li><a href=https://github.com/olegnakhod/java_advanced/tree/lesson-03>Lesson 03</a> [Log4j]</li>
+          <li><a href=https://github.com/olegnakhod/java_advanced/tree/lesson-04>Lesson 04</a> [Servlets, JSP, Tomcat]</li>
     
 </ul>
 
