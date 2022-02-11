@@ -1,0 +1,5 @@
+2022-02-10 20:53:11 ERROR ArticleDaoImpl:81 - java.sql.SQLException: Illegal operation on empty result set.
+2022-02-10 20:54:04 ERROR ArticleDaoImpl:81 - java.sql.SQLException: Illegal operation on empty result set.
+2022-02-10 22:49:55 ERROR UserDaoImpl:85 - java.sql.SQLException: Illegal operation on empty result set.
+2022-02-11 11:01:43 ERROR UserDaoImpl:149 - java.sql.SQLException: Illegal operation on empty result set.
+2022-02-11 11:01:50 ERROR UserDaoImpl:149 - java.sql.SQLException: Illegal operation on empty result set.
