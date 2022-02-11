@@ -1,4 +1,0 @@
-2022-02-11 10:34:59 ERROR UserDaoImpl:35 - java.sql.SQLException: No suitable driver found for jdbc:mysql://localhost/shop_with_magazines?useUnicode=true&serverTimezone=UTC
-2022-02-11 10:36:30 ERROR UserDaoImpl:34 - java.sql.SQLException: No suitable driver found for jdbc:mysql://localhost/shop_with_magazines?useUnicode=true&serverTimezone=UTC
-2022-02-11 10:40:45 ERROR UserServiceImpl:23 - java.sql.SQLException: No suitable driver found for jdbc:mysql://localhost/shop_with_magazines?useUnicode=true&serverTimezone=UTC
-2022-02-11 10:43:56 ERROR UserServiceImpl:23 - java.sql.SQLException: No suitable driver found for jdbc:mysql://localhost/shop_with_magazines?useUnicode=true&serverTimezone=UTC
