@@ -26,13 +26,11 @@ public class RegistrationServlet extends HttpServlet {
 		if (!email.isEmpty() && !userService.toFindUser(email) && !firstName.isEmpty() && !lastName.isEmpty()
 				&& !password.isEmpty()) {
 			userService.create(new User(firstName, lastName, email, password ,UserRole.USER.toString()));
-			request.setAttribute("userEmail", email);
-			request.getRequestDispatcher("cabinet.jsp").forward(request, response);
 		}
 
-		else {
-			request.getRequestDispatcher("registration.jsp").forward(request, response);
-		}
+		response.setContentType("text/plain");
+		response.setCharacterEncoding("UTF-8");
+		response.getWriter().write("Success");
 
 	}
 

@@ -8,7 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
+
 import academy.lgs.domain.User;
+import academy.lgs.dto.UserLogin;
 import academy.lgs.service.UserService;
 import academy.lgs.service.impl.UserServiceImpl;
 
@@ -20,17 +23,20 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		String email = request.getParameter("login");
+
+		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 
 		User user = userService.getUserByEmail(email);
-	
+
 		if (user != null && user.getPassword().equals(password)) {
-			request.setAttribute("userEmail", email);
-			request.getRequestDispatcher("cabinet.jsp").forward(request, response);
-		}else {
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			UserLogin userLogin = new UserLogin();
+			userLogin.destinationUrl = "cabinet.jsp";
+			userLogin.userEmail = user.getEmail();
+			String json = new Gson().toJson(userLogin);
+			response.setContentType("application/json");
+			response.setCharacterEncoding("UTF-8");
+			response.getWriter().write(json);
 		}
 	}
 
