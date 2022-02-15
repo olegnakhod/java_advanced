@@ -8,6 +8,7 @@
           <li><a href=https://github.com/olegnakhod/java_advanced/tree/lesson-05>Lesson 05</a> [Implement Project (DB design, Dao, Services)]</li>
           <li><a href=https://github.com/olegnakhod/java_advanced/tree/lesson-06>Lesson 06</a> [Implement Project (Logger, Registration, Login)]</li>
           <li><a href=https://github.com/olegnakhod/java_advanced/tree/lesson-07>Lesson 07</a> [Implement project (Bootstrap, Ajax)]</li>
+          <li><a href=https://github.com/olegnakhod/java_advanced/tree/lesson-07>Lesson 07</a> [Implement Project (Cabinet, Logout)]</li>
 </ul>
 
 
