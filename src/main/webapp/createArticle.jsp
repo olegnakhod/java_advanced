@@ -15,7 +15,7 @@
 	integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="css/login.css" />
-<title>Cabinet</title>
+<title>Shop</title>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>

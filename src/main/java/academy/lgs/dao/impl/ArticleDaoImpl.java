@@ -43,7 +43,7 @@ public class ArticleDaoImpl implements ArticleDao {
 			
 			ResultSet rs = preparedStatement.getGeneratedKeys();
 			rs.next();
-			article.setArticleId(rs.getInt(1));
+			article.setId(rs.getInt(1));
 		} catch (SQLException e) {
 			LOGGER.error(e);
 		}
@@ -67,7 +67,7 @@ public class ArticleDaoImpl implements ArticleDao {
 			Integer articleId = result.getInt("id");
 			String name = result.getString("name");
 			Double price = result.getDouble("price");
-			String description = result.getString("email");
+			String description = result.getString("description");
 			article = new Article(articleId, name, price, description);
 		} catch (SQLException e) {
 			LOGGER.error(e);
@@ -113,7 +113,7 @@ public class ArticleDaoImpl implements ArticleDao {
 				Integer articleId = result.getInt("id");
 				String name = result.getString("name");
 				Double price = result.getDouble("price");
-				String description = result.getString("email");
+				String description = result.getString("description");
 				listOfArticle.add(new Article(articleId, name, price, description));
 			}
 		} catch (SQLException e) {

@@ -9,7 +9,7 @@ $("button.addArticle").click(
 			description: description,
 			price: price
 		};
-		$.post("addArticle", product,
+		$.post("article", product,
 			function(data) {
 				if (data == 'Success') {
 					alert('Success');
@@ -17,3 +17,15 @@ $("button.addArticle").click(
 			});
 
 	});
+
+$("button.buy-product").click(function() {
+	let articleId = jQuery(this).attr("data-article");
+
+
+	$.post("bucket", { 'articleId': articleId },
+		function(data) {
+			if (data == 'Success') {
+				$('[data-dismiss=modal]').trigger({ type: 'click' });
+			}
+		});
+});

@@ -24,7 +24,7 @@ public class ArticleServiceImpl implements ArticleService {
 		}
 	}
 
-	public static ArticleService getProductService() {
+	public static ArticleService getArticleService() {
 		if (articleServiceImpl == null) {
 			articleServiceImpl = new ArticleServiceImpl();
 		}

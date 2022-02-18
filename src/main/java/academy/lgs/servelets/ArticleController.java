@@ -11,14 +11,12 @@ import academy.lgs.domain.Article;
 import academy.lgs.service.ArticleService;
 import academy.lgs.service.impl.ArticleServiceImpl;
 
-/**
- * Servlet implementation class AddProduckt
- */
-@WebServlet("/addArticle")
-public class AddArticle extends HttpServlet {
+
+@WebServlet("/article")
+public class ArticleController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	ArticleService articleService = ArticleServiceImpl.getProductService();
+	ArticleService articleService = ArticleServiceImpl.getArticleService();
 
 	// to create resource (product)
 	@Override
@@ -46,6 +44,13 @@ public class AddArticle extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		String articleId = request.getParameter("id");
+		
+		Article article = articleService.read(Integer.parseInt(articleId));
+		
+		request.setAttribute("article", article);
+		request.getRequestDispatcher("singleArticle.jsp").forward(request, response);
 
 	}
 

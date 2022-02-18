@@ -3,3 +3,10 @@
 2022-02-10 22:49:55 ERROR UserDaoImpl:85 - java.sql.SQLException: Illegal operation on empty result set.
 2022-02-11 11:01:43 ERROR UserDaoImpl:149 - java.sql.SQLException: Illegal operation on empty result set.
 2022-02-11 11:01:50 ERROR UserDaoImpl:149 - java.sql.SQLException: Illegal operation on empty result set.
+2022-02-17 22:12:54 ERROR ArticleDaoImpl:120 - java.sql.SQLException: Column 'email' not found.
+2022-02-17 22:13:23 ERROR ArticleDaoImpl:120 - java.sql.SQLException: Column 'email' not found.
+2022-02-17 22:15:10 ERROR ArticleDaoImpl:120 - java.sql.SQLException: Column 'email' not found.
+2022-02-17 22:15:16 ERROR ArticleDaoImpl:120 - java.sql.SQLException: Column 'email' not found.
+2022-02-18 00:09:05 ERROR BucketDaoImpl:48 - java.sql.SQLSyntaxErrorException: Unknown column 'purchase_date' in 'field list'
+2022-02-18 00:09:07 ERROR BucketDaoImpl:48 - java.sql.SQLSyntaxErrorException: Unknown column 'purchase_date' in 'field list'
+2022-02-18 00:12:57 ERROR BucketDaoImpl:48 - java.sql.SQLSyntaxErrorException: Unknown column 'purchase_date' in 'field list'

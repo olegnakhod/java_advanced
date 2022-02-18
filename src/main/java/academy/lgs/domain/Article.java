@@ -3,13 +3,13 @@ package academy.lgs.domain;
 import java.util.Objects;
 
 public class Article {
-	private Integer articleId;
+	private Integer id;
 	private String name;
 	private Double price;
 	private String description;
 	
 	public Article(Integer id, String name, Double price, String description) {
-		this.articleId = id;
+		this.id = id;
 		this.name = name;
 		this.price = price;
 		this.description = description;
@@ -21,12 +21,12 @@ public class Article {
 		this.description = description;
 	}
 
-	public Integer getArticleId() {
-		return articleId;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setArticleId(Integer id) {
-		this.articleId = id;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -55,7 +55,7 @@ public class Article {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(description, articleId, name, price);
+		return Objects.hash(description, id, name, price);
 	}
 
 	@Override
@@ -67,13 +67,13 @@ public class Article {
 		if (getClass() != obj.getClass())
 			return false;
 		Article other = (Article) obj;
-		return Objects.equals(description, other.description) && Objects.equals(articleId, other.articleId)
+		return Objects.equals(description, other.description) && Objects.equals(id, other.id)
 				&& Objects.equals(name, other.name) && Objects.equals(price, other.price);
 	}
 
 	@Override
 	public String toString() {
-		return "Articles [id=" + articleId + ", name=" + name + ", price=" + price + ", description=" + description + "]";
+		return "Articles [id=" + id + ", name=" + name + ", price=" + price + ", description=" + description + "]";
 	}
 	
 }
