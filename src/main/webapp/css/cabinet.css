@@ -2,3 +2,7 @@
 html{
 	widht: 95vw;
 }
+.body{
+	position:absolute;
+	z-index: -1;
+}

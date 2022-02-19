@@ -14,7 +14,7 @@
 </head>
 
 <body>
-	<div class="footer-basic">
+	<div class="footer-basic fixed-bottom">
 		<footer>
 			<div class="social">
 				<a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i

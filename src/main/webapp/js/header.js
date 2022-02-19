@@ -1,14 +1,6 @@
-window.addEventListener('DOMContentLoaded', event => {
-
-    const sidebarToggle = document.body.querySelector('#sidebarToggle');
-    if (sidebarToggle) {
-        sidebarToggle.addEventListener('click', event => {
-            event.preventDefault();
-            document.body.classList.toggle('sb-sidenav-toggled');
-            localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
-        });
-    }
-
+$("#menu-toggle").click(function(e) {
+  e.preventDefault();
+  $("#wrapper").toggleClass("toggled");
 });
 
 $("#logout").click(function() {
@@ -25,4 +17,18 @@ $("#logout").click(function() {
 		}
 	});
 
+});
+
+$(document).ready(function() {
+	$.get("user-role", function(data) {
+		if (data !== '') {
+			userRole = data;
+		}
+	}).done(function() {
+		if (userRole === 'ADMINISTRATOR') {
+			$('a.user-bucket-option').hide();
+		} else {
+			$('a.create-product-option').hide();
+		}
+	});
 });

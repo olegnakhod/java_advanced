@@ -36,7 +36,7 @@
 	font-family: "Roboto", sans-serif;
 	text-transform: uppercase;
 	outline: 0;
-	background: rgb(70, 106, 181);
+	background: rgb(255, 0, 0);
 	width: 100%;
 	border: 0;
 	padding: 15px;
@@ -48,7 +48,7 @@
 }
 
 .form button:hover, .form button:active, .form button:focus {
-	background: rgb(40, 49, 98);
+	background: rgb(199, 33, 33);
 }
 
 .form .message {
@@ -58,7 +58,7 @@
 }
 
 .form .message a {
-	color: rgb(199, 33, 33);
+	color: rgb(128, 0, 64);
 	text-decoration: none;
 }
 
@@ -112,6 +112,6 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.alert-success {
+div.login-page div.alert.alert-success{
 	display: none;
 }

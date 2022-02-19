@@ -9,9 +9,6 @@ $('.message a').click(function() {
 	loginRegisterSwitch();
 });
 
-function showAlertAfterRegistration() {
-	$('div.alert.alert-success').show();
-}
 
 $('button.register').click(function() {
 	let firstName = $("form.register-form input.firstName").val();
@@ -37,7 +34,6 @@ $('button.register').click(function() {
 				$("form")[0].reset();
 				$("form")[1].reset();
 				loginRegisterSwitch();
-				showAlertAfterRegistration()
 			}
 		});
 	}
