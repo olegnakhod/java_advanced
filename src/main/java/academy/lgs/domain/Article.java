@@ -2,11 +2,27 @@ package academy.lgs.domain;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "articles")
 public class Article {
+	@Id
+	@Column
+	@GeneratedValue
 	private Integer id;
+	@Column
 	private String name;
+	@Column
 	private Double price;
+	@Column
 	private String description;
+	
+	public Article() {}
 	
 	public Article(Integer id, String name, Double price, String description) {
 		this.id = id;

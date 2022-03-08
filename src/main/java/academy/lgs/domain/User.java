@@ -2,13 +2,36 @@ package academy.lgs.domain;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "users")
 public class User {
+	@Id
+	@GeneratedValue
+	@Column(name = "id")
 	private Integer userId;
+	
+	@Column(name = "first_name")
 	private String firstName;
+	
+	@Column(name = "last_name")
 	private String lastName;
+	
+	@Column(name = "email")
 	private String email;
+	
+	@Column(name = "password")
 	private String password;
+	
+	@Column(name = "role")
 	private String role;
+	
+	public User() {}
 	
 	public User(Integer id, String firstName, String lastName, String email, String password, String role) {
 		this.userId = id;
@@ -77,7 +100,7 @@ public class User {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(email, firstName, userId, lastName, password, role);
+		return Objects.hash(email, firstName, lastName, password, role, userId);
 	}
 
 	@Override
@@ -89,15 +112,15 @@ public class User {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		return Objects.equals(email, other.email) && Objects.equals(firstName, other.firstName) && userId == other.userId
+		return Objects.equals(email, other.email) && Objects.equals(firstName, other.firstName)
 				&& Objects.equals(lastName, other.lastName) && Objects.equals(password, other.password)
-				&& Objects.equals(role, other.role);
+				&& Objects.equals(role, other.role) && Objects.equals(userId, other.userId);
 	}
 
 	@Override
 	public String toString() {
-		return "Users [id=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+		return "User [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
 				+ ", password=" + password + ", role=" + role + "]";
 	}
-	
+
 }

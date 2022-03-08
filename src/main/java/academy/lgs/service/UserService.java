@@ -5,5 +5,4 @@ import academy.lgs.shared.AbstractCRUD;
 
 public interface UserService extends AbstractCRUD<User>{
 	User getUserByEmail(String email);
-	boolean toFindUser(String email);
 }

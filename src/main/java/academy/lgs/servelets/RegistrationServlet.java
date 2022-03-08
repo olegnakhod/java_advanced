@@ -23,7 +23,7 @@ public class RegistrationServlet extends HttpServlet {
 		String email = request.getParameter("email").toLowerCase();
 		String password = request.getParameter("password");
 
-		if (!email.isEmpty() && !userService.toFindUser(email) && !firstName.isEmpty() && !lastName.isEmpty()
+		if (!email.isEmpty() && !firstName.isEmpty() && !lastName.isEmpty()
 				&& !password.isEmpty()) {
 			userService.create(new User(firstName, lastName, email, password ,UserRole.USER.toString()));
 		}

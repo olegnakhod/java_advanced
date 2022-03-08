@@ -1,9 +1,9 @@
 package academy.lgs.service.impl;
 
-import java.sql.SQLException;
 import java.util.List;
-
-import org.apache.log4j.Logger;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import academy.lgs.dao.ArticleDao;
 import academy.lgs.dao.impl.ArticleDaoImpl;
@@ -14,14 +14,10 @@ public class ArticleServiceImpl implements ArticleService {
 
 	private static ArticleService articleServiceImpl;
 	private ArticleDao articleDao;
-	private static Logger LOGGER = Logger.getLogger(ArticleServiceImpl.class);
+//	private static Logger LOGGER = Logger.getLogger(ArticleServiceImpl.class);
 	
 	private ArticleServiceImpl() {
-		try {
 			articleDao = new ArticleDaoImpl();
-		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
-			LOGGER.error(e);
-		}
 	}
 
 	public static ArticleService getArticleService() {
@@ -56,6 +52,11 @@ public class ArticleServiceImpl implements ArticleService {
 	@Override
 	public List<Article> readAll() {
 		return articleDao.readAll();
+	}
+
+	@Override
+	public Map<Integer, Article> readAllMap() {
+		return  readAll().stream().collect(Collectors.toMap(Article::getId, Function.identity()));
 	}
 
 }

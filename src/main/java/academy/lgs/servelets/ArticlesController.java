@@ -16,7 +16,7 @@ import academy.lgs.service.ArticleService;
 import academy.lgs.service.impl.ArticleServiceImpl;
 
 @WebServlet("/articles")
-public class Articles extends HttpServlet {
+public class ArticlesController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	private ArticleService articleService = ArticleServiceImpl.getArticleService();

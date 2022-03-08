@@ -3,48 +3,56 @@ package academy.lgs.domain;
 import java.util.Date;
 import java.util.Objects;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+
+@Entity
+@Table (name = "bucket")
 public class Bucket {
-	private Integer bucketId;
-	private Integer userId;
-	private Integer articleId;
+	@Id
+	@Column
+	private String id;
+	
+	@ManyToOne
+	@JoinColumn(name = "user_id", referencedColumnName = "id")
+	private User user;
+	
+	@ManyToOne
+	@JoinColumn(name = "article_id", referencedColumnName = "id")
+	private Article article;
+	
+	@Column(name = "purchase_date")
 	private Date purchaseDate;
 	
-	public Bucket(Integer id, Integer usersId, Integer articlesId, Date purchaseDate) {
-		super();
-		this.bucketId = id;
-		this.userId = usersId;
-		this.articleId = articlesId;
-		this.purchaseDate = purchaseDate;
-	}
+	public Bucket() {}
 	
-	public Bucket(Integer userId, Integer articleId, Date purchaseDate) {
-		this.userId = userId;
-		this.articleId = articleId;
-		this.purchaseDate = purchaseDate;
+	public String getId() {
+		return id;
 	}
 
-	public Integer getBucketId() {
-		return bucketId;
+	public void setId(String id) {
+		this.id = id;
 	}
 
-	public void setBucketId(Integer id) {
-		this.bucketId = id;
+	public User getUser() {
+		return user;
 	}
 
-	public Integer getUserId() {
-		return userId;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public Article getArticle() {
+		return article;
 	}
 
-	public Integer getArticleId() {
-		return articleId;
-	}
-
-	public void setArticleId(Integer articleId) {
-		this.articleId = articleId;
+	public void setArticle(Article article) {
+		this.article = article;
 	}
 
 	public Date getDate() {
@@ -57,7 +65,7 @@ public class Bucket {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(articleId, bucketId, purchaseDate, userId);
+		return Objects.hash(article, id, purchaseDate, user);
 	}
 
 	@Override
@@ -69,15 +77,15 @@ public class Bucket {
 		if (getClass() != obj.getClass())
 			return false;
 		Bucket other = (Bucket) obj;
-		return Objects.equals(articleId, other.articleId) && Objects.equals(bucketId, other.bucketId)
-				&& Objects.equals(purchaseDate, other.purchaseDate) && Objects.equals(userId, other.userId);
+		return Objects.equals(article, other.article) && Objects.equals(id, other.id)
+				&& Objects.equals(purchaseDate, other.purchaseDate) && Objects.equals(user, other.user);
 	}
 
 	@Override
 	public String toString() {
-		return "Bucket [id=" + bucketId + ", usersId=" + userId + ", articlesId=" + articleId + ", purchaseDate="
-				+ purchaseDate + "]";
+		return "Bucket [id=" + id + ", user=" + user + ", article=" + article + ", purchaseDate=" + purchaseDate + "]";
 	}
+
 	
 	
 	

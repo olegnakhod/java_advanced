@@ -1,9 +1,6 @@
 package academy.lgs.service.impl;
 
-import java.sql.SQLException;
 import java.util.List;
-
-import org.apache.log4j.Logger;
 
 import academy.lgs.dao.BucketDao;
 import academy.lgs.dao.impl.BucketDaoImpl;
@@ -14,14 +11,10 @@ public class BucketServiceImpl implements BucketService {
 
 	private BucketDao bucketDao;
 	private static BucketService bucketServiceImpl;
-	private static Logger LOGGER = Logger.getLogger(BucketServiceImpl.class);
+//	private static Logger LOGGER = Logger.getLogger(BucketServiceImpl.class);
 
 	private BucketServiceImpl() {
-			try {
-				bucketDao = new BucketDaoImpl();
-			} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
-				LOGGER.error(e);
-			}
+		bucketDao = new BucketDaoImpl();
 	}
 
 	public static BucketService getBucketService() {

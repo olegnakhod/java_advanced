@@ -10,3 +10,7 @@
 2022-02-18 00:09:05 ERROR BucketDaoImpl:48 - java.sql.SQLSyntaxErrorException: Unknown column 'purchase_date' in 'field list'
 2022-02-18 00:09:07 ERROR BucketDaoImpl:48 - java.sql.SQLSyntaxErrorException: Unknown column 'purchase_date' in 'field list'
 2022-02-18 00:12:57 ERROR BucketDaoImpl:48 - java.sql.SQLSyntaxErrorException: Unknown column 'purchase_date' in 'field list'
+2022-02-18 23:00:50 ERROR BucketDaoImpl:108 - java.sql.SQLException: Column 'product_id' not found.
+2022-02-18 23:02:49 ERROR BucketDaoImpl:108 - java.sql.SQLException: Column 'product_id' not found.
+2022-02-18 23:02:50 ERROR BucketDaoImpl:108 - java.sql.SQLException: Column 'product_id' not found.
+2022-02-19 16:16:48 ERROR UserDaoImpl:149 - java.sql.SQLException: Illegal operation on empty result set.

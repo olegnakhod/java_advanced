@@ -1,10 +1,6 @@
 package academy.lgs.service.impl;
 
-
-import java.sql.SQLException;
 import java.util.List;
-
-import org.apache.log4j.Logger;
 
 import academy.lgs.dao.UserDao;
 import academy.lgs.dao.impl.UserDaoImpl;
@@ -14,14 +10,9 @@ import academy.lgs.service.UserService;
 public class UserServiceImpl implements UserService {
 	private static UserService userServiceImpl;
 	private UserDao userDao;
-	private static Logger LOGGER = Logger.getLogger(UserServiceImpl.class);
 
 	private UserServiceImpl() {
-				try {
-					userDao = new UserDaoImpl();
-				} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
-					LOGGER.error(e);
-				}
+		userDao = new UserDaoImpl();
 	}
 
 	public static UserService getUserService() {
@@ -62,10 +53,4 @@ public class UserServiceImpl implements UserService {
 	public User getUserByEmail(String email) {
 		return userDao.getUserByEmail(email);
 	}
-
-	@Override
-	public boolean toFindUser(String email) {
-		return userDao.toFindUser(email);
-	}
-
 }
