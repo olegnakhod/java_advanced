@@ -18,10 +18,8 @@ public class Aplication {
 		Configuration configuration = new Configuration();
 		configuration.configure("hibernate.cfg.xml");
 
-		ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
-				.applySettings(configuration.getProperties()).build();
-
-		SessionFactory factory = configuration.buildSessionFactory(serviceRegistry);
+		StandardServiceRegistryBuilder ssrb = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
+        SessionFactory factory = configuration.buildSessionFactory(ssrb.build());
 
 		Session session = factory.openSession();
 		

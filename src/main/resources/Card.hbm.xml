@@ -12,12 +12,11 @@
 		<property name="total" column="total" type="string" />
 		<property name="name" column="name" type="string" />
 
-		<set name="items" table="card_item" inverse="true" lazy="true" fetch="select">
+		<set name="items" table="card_item" inverse="false" lazy="true" fetch="select" cascade = "all">
 			<key>
 				<column name="card_id" not-null="true"></column>
 			</key>
-			<many-to-many entity-name="academy.lgs.Item">
-				<column name="item_id" not-null="true"></column>
+			<many-to-many entity-name="academy.lgs.Item" column="item_id">
 			</many-to-many>
 		</set>
 
