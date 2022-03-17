@@ -15,6 +15,7 @@
           <li><a href=https://github.com/olegnakhod/java_advanced/tree/lesson-14>Lesson 14</a> [Hibernate]</li>
           <li><a href=https://github.com/olegnakhod/java_advanced/tree/lesson-15>Lesson 15</a> [Hibernate mappings]</li>
           <li><a href=https://github.com/olegnakhod/java_advanced/tree/lesson-16>Lesson 16</a> [Spring Core]</li>
+          <li><a href=https://github.com/olegnakhod/java_advanced/tree/lesson-17>Lesson 17</a> [Spring Data JPA]</li>
 </ul>
 
 
