@@ -17,6 +17,7 @@
           <li><a href=https://github.com/olegnakhod/java_advanced/tree/lesson-16>Lesson 16</a> [Spring Core]</li>
           <li><a href=https://github.com/olegnakhod/java_advanced/tree/lesson-17>Lesson 17</a> [Spring Data JPA]</li>
           <li><a href=https://github.com/olegnakhod/java_advanced/tree/lesson-18>Lesson 18</a> [Spring MVC]</li>
+          <li><a href=https://github.com/olegnakhod/java_advanced/tree/lesson-19>Lesson 19</a> [Spring File upload]</li>
 </ul>
 
 
