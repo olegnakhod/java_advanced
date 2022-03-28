@@ -35,7 +35,8 @@ public class Student {
 	private FileMultipart fileMultipart;
 		
 	
-	public Student(String firstName, String lastName, Integer age) {
+	public Student(Integer id, String firstName, String lastName, Integer age) {
+		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;

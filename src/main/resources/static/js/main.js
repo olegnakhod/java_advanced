@@ -1,3 +1,21 @@
+$('button.register').click(function() {
+	let firstName = $("form.register-form input.firstName").val();
+	let lastName = $("form.register-form input.lastName").val();
+	let age = $("form.register-form input.age").val();
+	let userObj = {
+		firstName: firstName,
+		lastName: lastName,
+		age: age
+	};
+	$.post("/registration", userObj, function(data) {
+		if (data == 'Sucsess') {
+			$("form")[0].reset();
+			$("form")[1].reset();
+		}
+	});
+});
+
+
 let singleUploadForm = document.querySelector('#singleUploadForm');
 let singleFileUploadInput = document.querySelector('#singleFileUploadInput');
 let singleFileUploadError = document.querySelector('#singleFileUploadError');
@@ -17,12 +35,13 @@ function uploadSingleFile(file) {
 		if (xhr.status == 200) {
 			singleFileUploadError.style.display = "none";
 			singleFileUploadSuccess.innerHTML = "<img src='"
-				+ response.fileDownloadUri+ ">";
+					+ response.fileDownloadUri
+					+ "' target='_blank'>";
 			singleFileUploadSuccess.style.display = "block";
 		} else {
 			singleFileUploadSuccess.style.display = "none";
 			singleFileUploadError.innerHTML = (response && response.message)
-				|| "Some Error Occurred";
+					|| "Some Error Occurred";
 		}
 	}
 
@@ -30,7 +49,7 @@ function uploadSingleFile(file) {
 }
 
 singleUploadForm.addEventListener('submit', function(event) {
-	var files = singleFileUploadInput.files;
+	let files = singleFileUploadInput.files;
 	if (files.length === 0) {
 		singleFileUploadError.innerHTML = "Please select a file";
 		singleFileUploadError.style.display = "block";
@@ -39,20 +58,3 @@ singleUploadForm.addEventListener('submit', function(event) {
 	event.preventDefault();
 }, true);
 
-$('button.register').click(function() {
-	let firstName = $("form.register-form input.firstName").val();
-	let lastName = $("form.register-form input.lastName").val();
-	let age = $("form.register-form input.age").val();
-	let userObj = {
-		firstName: firstName,
-		lastName: lastName,
-		age: age
-	};
-	$.post("/registration", userObj, function(data) {
-		if (data == 'Sucsess') {
-			$("form")[0].reset();
-			$("form")[1].reset();
-			loginRegisterSwitch();
-		}
-	});
-});

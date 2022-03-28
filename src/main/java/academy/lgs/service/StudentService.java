@@ -2,22 +2,37 @@ package academy.lgs.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import academy.lgs.domain.Student;
+import academy.lgs.repository.StudentRepository;
 
 @Service
-public interface StudentService {
+public class StudentService	{
+
+	@Autowired(required=true)
+	private StudentRepository studentRepo;
 	
-	Student save(Student student);
+	public Student save(Student student) {
+		return studentRepo.saveAndFlush(student);
+	}
 
-	Student findById(Integer id);
+	public Student findById(Integer id) {
+		return studentRepo.getOne(id);
+	}
 
-	Student update(Student student);
+	public Student update(Student student) {
+		return studentRepo.saveAndFlush(student);
+	}
 
-	void deleteById(Integer id);
+	public void deleteById(Integer id) {
+		studentRepo.deleteById(id);
+		
+	}
 
-	List<Student> findAll();
-	
-	
+	public List<Student> findAll() {
+		return studentRepo.findAll();
+	}
+
 }
