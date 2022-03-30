@@ -1,7 +1,6 @@
 package academy.lgs.controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -30,10 +29,7 @@ public class StudentController {
 	
 	@GetMapping("/profile" )
 	public void viewProfile(HttpServletResponse response) throws IOException {
-		List<Student> findAll = studentService.findAll();
-		Integer id = findAll.size();
-		Student student =  studentService.findById(id);
-		String json = new Gson().toJson(student);
+		String json = new Gson().toJson(studentService.findLastStudent());
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().write(json);

@@ -30,6 +30,13 @@ public class StudentService	{
 		studentRepo.deleteById(id);
 		
 	}
+	
+	public Student findLastStudent() {
+		List<Student> findAllStudents = studentRepo.findAll();
+		Student student = findAllStudents.get(findAllStudents.size() - 1);
+		return student;
+		
+	}
 
 	public List<Student> findAll() {
 		return studentRepo.findAll();
