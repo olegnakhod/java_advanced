@@ -9,10 +9,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>Student Information</h2>
 	<c:choose>
 		<c:when test="${mode == 'STUDENT_VIEW'}">
-			<h2>Submitted Student Information</h2>
+			<h2>View profile</h2>
 			<table>
 				<tr>
 					<td>First name</td>
@@ -33,8 +32,8 @@
 			</div>
 		</c:when>
 		<c:when test="${mode == 'STUDENT_CREATE'}">
-			<form:form modelAttribute="studentFromServer" method="POST"
-				action="/addStudent ">
+			<h2>Create profile</h2>
+			<form:form modelAttribute="studentFromServer" method="POST"	action="/addStudent ">
 				<table>
 					<tr>
 						<form:input path="id" type="hidden" />
@@ -62,8 +61,13 @@
 					<button type="submit">Add foto</button>
 				</form>
 			</div>
+			<div>
+				<div id="singleFileUploadError"></div>
+				<div id="singleFileUploadSuccess"></div>
+			</div>
 		</c:when>
 	</c:choose>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="/js/main.js"></script>
 </body>
 </html>
