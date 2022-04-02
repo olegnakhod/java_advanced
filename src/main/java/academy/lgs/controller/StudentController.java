@@ -37,33 +37,34 @@ public class StudentController {
 	FileMultipartService fileMultipartService;
 	
 	@GetMapping("/")
-	public ModelAndView newStudent() {
+	public ModelAndView newStudent(HttpServletRequest req) {
+		req.setAttribute("mode", "STUDENT_CREATE");
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("studentFromServer", new Student());
-		modelAndView.setViewName("registration");
+		modelAndView.setViewName("index");
 		return modelAndView;
 	}
 
 	@PostMapping("/addStudent")
 	public ModelAndView addStudent(@ModelAttribute("studentFromServer") Student student,HttpServletRequest req) {
+		req.setAttribute("mode", "STUDENT_VIEW");
 		studentService.save(student);
 		req.setAttribute("student", studentService.findById(student.getId()));
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("profile");
+		modelAndView.setViewName("index");
 		return modelAndView;
 	}
 	
 
 	@PostMapping("/uploadFile")
-	public MultipartUploadResponse uploadFile(@RequestParam("file") MultipartFile file) throws IOException {
+	public MultipartUploadResponse uploadFile(@RequestParam("file") MultipartFile file,HttpServletRequest req) throws IOException {
 		FileMultipart fileMultipart = fileMultipartService.storeFile(file);
 
 		String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath().path("/downloadFile/")
 				.path(fileMultipart.getId()).toUriString();
-		
-		MultipartUploadResponse multipartUploadResponse = new MultipartUploadResponse(fileMultipart.getFileName(), fileDownloadUri, file.getContentType(),
+	
+		return new MultipartUploadResponse(fileMultipart.getFileName(), fileDownloadUri, file.getContentType(),
 				file.getSize());
-		return multipartUploadResponse;
 	}
 
 	@GetMapping("/downloadFile/{fileId}")
