@@ -29,14 +29,8 @@ public class Student {
 	
 	@Column(name = "age")
 	private Integer age;
-		
-	@OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "file_id", referencedColumnName = "id")
-	private FileMultipart fileMultipart;
-		
 	
-	public Student(Integer id, String firstName, String lastName, Integer age) {
-		this.id = id;
+	public Student(String firstName, String lastName, Integer age) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;

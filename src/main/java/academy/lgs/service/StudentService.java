@@ -41,5 +41,9 @@ public class StudentService	{
 	public List<Student> findAll() {
 		return studentRepo.findAll();
 	}
+	
+	public Integer returnStudentId(Student student) {
+		return student.getId();
+	}
 
 }

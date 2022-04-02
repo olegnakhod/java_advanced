@@ -24,9 +24,6 @@ public class FileMultipart {
 
 	@Lob
 	private byte[] data;
-	
-	@OneToOne(mappedBy = "fileMultipart")
-    private Student student;
 
 	public FileMultipart(String fileName, String fileType, byte[] data) {
 		this.fileName = fileName;
