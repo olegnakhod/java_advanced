@@ -61,10 +61,6 @@
 					<button type="submit">Add foto</button>
 				</form>
 			</div>
-			<div>
-				<div id="singleFileUploadError"></div>
-				<div id="singleFileUploadSuccess"></div>
-			</div>
 		</c:when>
 	</c:choose>
 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
